@@ -4,9 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "fizzbuzz": "node index.js -u 200 --rules 3--simplyAdd(\\\"Fizz\\\") 5--simplyAdd(\\\"Buzz\\\")"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "command-line-args": "^5.0.2",
+    "command-line-usage": "^5.0.5"
+  }
 }

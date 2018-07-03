@@ -1,15 +1,15 @@
 class CustomFizzBuzz {
     constructor(ruleset) {
         this.ruleset = ruleset || [
-            [3, CustomFizzBuzz.simplyAdd("Fizz")],
-            [5, CustomFizzBuzz.simplyAdd("Buzz")]
+            {number: 3, action: CustomFizzBuzz.simplyAdd("Fizz")},
+            {number: 5, action: CustomFizzBuzz.simplyAdd("Buzz")}
         ];
     }
     buzzify(number) {
         let result = [];
         for (let rule of this.ruleset)
-            if (number % rule[0]  == 0)
-                rule[1](result);
+            if (number % rule.number  == 0)
+                rule.action(result);
         return result.join("") || number.toString();
     }
     static addBefore(str, letter) {
@@ -38,6 +38,9 @@ class CustomFizzBuzz {
             array.splice(0, array.length);
             array.push(str);
         }
+    }
+    static custom(lambda) {
+        return lambda;
     }
 }
 module.exports = CustomFizzBuzz;
